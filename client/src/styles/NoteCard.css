@@ -32,3 +32,15 @@
   font-size: 11px;
   color: var(--text-light);
 }
+.note-card--active {
+  background-color: #fff8ee;
+  border-left: 3px solid var(--primary);
+}
+
+.note-list--empty {
+  padding: 24px 16px;
+  text-align: center;
+  color: var(--text-light);
+  font-size: 14px;
+  line-height: 2;
+}

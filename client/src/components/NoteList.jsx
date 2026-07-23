@@ -1,17 +1,24 @@
 import NoteCard from './NoteCard'
 
-// Temporary fake data so we can see the UI
-const sampleNotes = [
-  { id: 1, title: 'My First Note', content: 'This is the content of my first note.', date: '2024-01-15' },
-  { id: 2, title: 'Shopping List', content: 'Milk, eggs, bread, butter.', date: '2024-01-16' },
-  { id: 3, title: 'React Learning', content: 'Learn useState, useEffect, components.', date: '2024-01-17' },
-]
+function NoteList({ notes, selectedNote, onSelectNote }) {
+  if (notes.length === 0) {
+    return (
+      <div className="note-list--empty">
+        <p>No notes yet.</p>
+        <p>Click + New to create one.</p>
+      </div>
+    )
+  }
 
-function NoteList() {
   return (
     <div className="note-list">
-      {sampleNotes.map((note) => (
-        <NoteCard key={note.id} note={note} />
+      {notes.map((note) => (
+        <NoteCard
+          key={note.id}
+          note={note}
+          isSelected={selectedNote?.id === note.id}
+          onSelect={onSelectNote}
+        />
       ))}
     </div>
   )

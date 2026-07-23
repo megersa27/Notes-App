@@ -57,3 +57,40 @@
 .note-editor__body:focus {
   border-color: transparent;
 }
+.note-editor__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.note-editor__delete-btn {
+  padding: 8px 20px;
+  background-color: var(--danger);
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.note-editor__delete-btn:hover {
+  background-color: #c0392b;
+}
+
+.note-editor--empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  font-size: 15px;
+}
+
+.auth-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 16px;
+  font-size: 16px;
+}
