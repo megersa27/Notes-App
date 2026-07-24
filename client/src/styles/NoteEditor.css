@@ -5,13 +5,14 @@
   padding: 24px;
   background-color: var(--editor-bg);
   height: calc(100vh - 60px);
+  overflow: hidden;
 }
 
 .note-editor__header {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .note-editor__title {
@@ -29,6 +30,11 @@
   border-bottom-color: var(--primary);
 }
 
+.note-editor__actions {
+  display: flex;
+  gap: 8px;
+}
+
 .note-editor__save-btn {
   padding: 8px 20px;
   background-color: var(--primary);
@@ -41,25 +47,6 @@
 
 .note-editor__save-btn:hover {
   background-color: var(--primary-dark);
-}
-
-.note-editor__body {
-  flex: 1;
-  resize: none;
-  border: none;
-  border-radius: 0;
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--text);
-  padding: 4px;
-}
-
-.note-editor__body:focus {
-  border-color: transparent;
-}
-.note-editor__actions {
-  display: flex;
-  gap: 8px;
 }
 
 .note-editor__delete-btn {
@@ -76,6 +63,91 @@
   background-color: #c0392b;
 }
 
+/* Tags row */
+.note-editor__tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 0;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  min-height: 40px;
+}
+
+.note-editor__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  background-color: #fff0d6;
+  border: 1px solid var(--primary);
+  border-radius: 12px;
+  font-size: 12px;
+  color: var(--primary-dark);
+}
+
+.note-editor__tag-remove {
+  background: none;
+  border: none;
+  color: var(--primary-dark);
+  font-size: 14px;
+  padding: 0;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.note-editor__tag-remove:hover {
+  color: var(--danger);
+}
+
+.note-editor__tag-input {
+  border: none;
+  border-radius: 0;
+  padding: 3px 6px;
+  font-size: 12px;
+  width: 160px;
+  min-width: 100px;
+  background: transparent;
+}
+
+.note-editor__tag-input:focus {
+  border-color: transparent;
+  outline: none;
+}
+
+/* Body textarea */
+.note-editor__body {
+  flex: 1;
+  resize: none;
+  border: none;
+  border-radius: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text);
+  padding: 4px;
+}
+
+.note-editor__body:focus {
+  border-color: transparent;
+}
+
+/* Footer */
+.note-editor__footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+}
+
+.note-editor__date,
+.note-editor__wordcount {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+/* Empty state */
 .note-editor--empty {
   flex: 1;
   display: flex;
